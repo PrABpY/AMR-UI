@@ -1,0 +1,33 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.key-container {
+    position: relative;
+}
+
+.key {
+    width: 100px;
+    height: 150px;
+    background-color: #3498db;
+    border-radius: 10px;
+    position: absolute;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes example {
+  0%   {width: 20px; height: 20px;}
+  50%  {width: 200px; height: 200px;}
+  100% {width: 20px; height: 20px;}
+}
+.key-large {
+    transform: scale(1.2);
+}
