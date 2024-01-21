@@ -1,5 +1,6 @@
 function getHello() {
     const url = 'http://192.168.89.27:80/home'
+    location.href = "http://192.168.89.27:8989/AMR-UI/lock.html";
     fetch(url, {headers: new Headers({"ngrok-skip-browser-warning": "69420",})})
     .then(response => response.text())  
     .then(text => {
