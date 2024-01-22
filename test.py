@@ -1,9 +1,8 @@
 from flask import Flask,request,jsonify,after_this_request,render_template
-from flask_cors import CORS
-import serial,requests
+import serial
 
 app = Flask(__name__)
-arduino = serial.Serial(port='COM5', baudrate=115200, timeout=.1)
+# arduino = serial.Serial(port='COM5', baudrate=115200, timeout=.1)
 
 @app.route('/hello', methods=['OPTIONS'])
 def hello():
@@ -13,7 +12,7 @@ def hello():
         return response
 
     jsonResp = {'jack': 4098, 'sape': 4139}
-    arduino.write(b'L')
+    # arduino.write(b'L')
     print(jsonResp)
     return jsonify(jsonResp)
 
@@ -25,7 +24,7 @@ def home():
         return response
 
     text = "PeePrab"
-    arduino.write(b'H')
+    # arduino.write(b'H')
     print(text)
     return text
 
@@ -37,7 +36,7 @@ def test():
         return response
 
     text = "test"
-    arduino.write(b'H')
+    # arduino.write(b'H')
     print(text)
     return text
 

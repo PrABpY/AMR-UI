@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Key Animation</title>
+    <title>ROBOT</title>
 </head>
 <body>
-
-<div id="key-container" class="key-container">
-    <img id="key" class="key" src="lock.png">
+<div id="pinpad"> 
+  <form >
+    <input type="password" id="password" /></br>
+    <input type="button" value="1" id="1" class="pinButton calc"/>
+    <input type="button" value="2" id="2" class="pinButton calc"/>
+    <input type="button" value="3" id="3" class="pinButton calc"/><br>
+    <input type="button" value="4" id="4" class="pinButton calc"/>
+    <input type="button" value="5" id="5" class="pinButton calc"/>
+    <input type="button" value="6" id="6" class="pinButton calc"/><br>
+    <input type="button" value="7" id="7" class="pinButton calc"/>
+    <input type="button" value="8" id="8" class="pinButton calc"/>
+    <input type="button" value="9" id="9" class="pinButton calc"/><br>
+    <input type="button" value="clear" id="clear" class="pinButton clear"/>
+    <input type="button" value="0" id="0 " class="pinButton calc"/>
+    <input type="button" value="enter" id="enter" class="pinButton enter"/>
+  </form>
 </div>
 
-<script>
-    while (i < 500) {
-      const url = 'http://192.168.89.27:80/test'
-      fetch(url)
-      i++;
-    }
-    location.href = "http://192.168.89.27:8989/AMR-UI/main.html";
+<script src = "script.js">
 </script>
 
 </body>

@@ -3,24 +3,52 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    justify-content: top;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #FAFAD2;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+.header-right {
+  float: right;
 }
 
 .buttons-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 
 .button {
     background-color: #3498db;
     color: white;
-    padding: 150px 300px;
+    padding: 300px 240px;
     font-size: 18px;
-    margin: 10px;
+    margin: 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -30,3 +58,5 @@ body {
 .button:hover {
     background-color: #2980b9;
 }
+
+
