@@ -8,17 +8,17 @@
 </head>
 <body>
 <div class="header">
-  <a href="#default" class="logo">ROBOT AMR</a>
-  <div class="header-right">
-    <p class="active" id="demo"></p>
   </div>
 </div>
 <div class="buttons-container">
-    <button class="button" onclick="getHello()">Menu 1</button>
-    <button class="button" onclick="getHello_2()">Menu 2</button>
-    <button class="button" onclick="button_pin()">Menu 3</button>
+    <img class="button" onclick="getHello()" src="image/delivery.png"></img>
+    <img class="button" onclick="getHello_2()" src="image/guide.png"></img>
+    <img class="button" src="image/setting.png"></img>
 </div>
-
+<div class="buttons-container">
+    <img id="myImg" width="0" height="100">
+    <img class="button-open" onclick="button_pin()" id="bimg">
+</div>
 <script src = "script.js">
 </script>
 
