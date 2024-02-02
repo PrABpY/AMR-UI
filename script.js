@@ -1,37 +1,36 @@
 let text;
 let userpinlock = 0;
-let ip = "http://192.168.72.154";
+let link = window.location.href;
+const ip = link.split(":");
+// document.getElementById("demo").innerHTML = "http:"+ip[1]+':80/home'
+// document.getElementById("bimg").src = "image/block.png";
 if (userpinlock == 0) {
     document.getElementById("myImg").src = "image/lock.png";
     document.getElementById("bimg").src = "image/block.png";
 }
-function getHello() {
+function delivery() {
     if (userpinlock == 1) {
-        const url = ip+':80/home'
-        location.href = "lock.html";
-        fetch(url, {headers: new Headers({"ngrok-skip-browser-warning": "69420",})})
+        const url = "http:"+ip[1]+':80/delivery'
+        fetch(url)
         .then(response => response.text())  
         .then(text => {
             console.log(text);
             document.getElementById("demo").innerHTML = text
         })
+        location.href = "delivery.html";
     }
     if (userpinlock == 0) {
         let person = prompt("Please enter your PIN:");
         if (person == "12345") {
-            location.href = "lock.html";
+            userpinlock = 1
+            document.getElementById("bimg").src = "image/bunlock.png";
         } 
     }
     
 }
 function getHello_2() {
-    const url = ip+':80/hello'
-    fetch(url, {
-      method: "get",
-      headers: new Headers({
-        "ngrok-skip-browser-warning": "69420",
-      }),
-    })
+    const url = "http:"+ip[1]+':80/hello'
+    fetch(url)
     .then(response => response.json())  
     .then(json => {
         console.log(json);

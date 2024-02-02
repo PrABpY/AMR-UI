@@ -63,11 +63,48 @@ body {
     background-color: #4169E1;
     color: white;
     padding: 7px 7px;
-    font-size: 18px;
-    margin: 30px;
+/*    font-size: 18px;*/
+    margin: 0px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s;
     align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 0px;
+}
+.gridmain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grid-top {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;;
+  padding: 0px;
+  align-items: left;
+}
+
+.button-select {
+    background-color: #4169E1;
+    color: white;
+    padding: 3px 3px;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+}
+
+.text {
+    font-family: Courier New;
+    font-size: 30px;
+}
+.img_top {
+    margin: 20px 0px;
 }

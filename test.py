@@ -4,19 +4,19 @@ import serial
 app = Flask(__name__)
 # arduino = serial.Serial(port='COM5', baudrate=115200, timeout=.1)
 
-@app.route('/hello', methods=['OPTIONS'])
-def hello():
+@app.route('/delivery', methods=['OPTIONS','GET'])
+def delivery():
     @after_this_request
     def add_header(response):
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
-    jsonResp = {'jack': 4098, 'sape': 4139}
-    # arduino.write(b'L')
+    jsonResp = {'unlock': 4098, 'lock': 4139}
+    # arduino.write(b'nL')
     print(jsonResp)
     return jsonify(jsonResp)
 
-@app.route('/home', methods=['OPTIONS'])
+@app.route('/home', methods=['OPTIONS','GET'])
 def home():
     @after_this_request
     def add_header(response):
