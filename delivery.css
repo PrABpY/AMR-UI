@@ -74,7 +74,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto;
   padding: 0px;
 }
 .gridmain {
@@ -82,6 +82,13 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+.gridbottom {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+
 .grid-top {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto;;
@@ -93,7 +100,19 @@ body {
     background-color: #4169E1;
     color: white;
     padding: 3px 3px;
-    margin: 10px;
+    margin: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+}
+
+.button-clear {
+    background-color: #8B0000;
+    color: white;
+    padding: 3px 3px;
+    margin: 10px 30px;
     border: none;
     border-radius: 50px;
     cursor: pointer;

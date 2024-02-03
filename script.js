@@ -8,6 +8,11 @@ if (userpinlock == 0) {
     document.getElementById("myImg").src = "image/lock.png";
     document.getElementById("bimg").src = "image/block.png";
 }
+
+function to_delivery() {
+    location.href = "delivery.html";
+}
+
 function delivery() {
     if (userpinlock == 1) {
         const url = "http:"+ip[1]+':80/delivery'
@@ -17,13 +22,17 @@ function delivery() {
             console.log(text);
             document.getElementById("demo").innerHTML = text
         })
-        location.href = "delivery.html";
+        setTimeout(to_delivery, 500);
+        
     }
     if (userpinlock == 0) {
         let person = prompt("Please enter your PIN:");
         if (person == "12345") {
             userpinlock = 1
             document.getElementById("bimg").src = "image/bunlock.png";
+            const url = "http:"+ip[1]+':80/delivery'
+            fetch(url)
+            setTimeout(to_delivery, 500);
         } 
     }
     
