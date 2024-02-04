@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="delivery.css">
+    <title>ROBOT</title>
+</head>
+<body>
+<div class="header">
+    <!-- <p id="location"></p> -->
+  </div>
+</div>
+<div class="buttons-container">
+    <img src="image/icguide.png" width="400" height="400"></img>
+    <div class="gridmain">
+        <div class="grid-top">
+            <p class = "text"><b>From</b></p>
+            <img class = "img_top" src="image/location.png" width="40" height="40">
+            <p class = "text" id = "location1"><b>..........</b></p>
+            <p class = "text"><b>To</b></p>
+            <img class = "img_top" src="image/location.png" width="40" height="40">
+            <p class = "text" id = "location2"><b>..........</b></p>
+        </div>
+        <div class="grid-container">
+            <img class="button-select" src="image/room1.png" onclick="room1()" width="200" height="50">
+            <img class="button-select" src="image/room2.png" width="200" height="50" onclick="room2()">
+            <img class="button-select" src="image/room3.png" width="200" height="50" onclick="room3()">
+            <img class="button-select" src="image/room4.png" width="200" height="50" onclick="room4()">
+        </div>
+        <div class="gridbottom">
+            <img class="button-clear" src="image/clear.png" width="150" height="40" onclick="clears()">
+            <img src="image/play.png" width="80" height="80" onclick="play()">
+        </div>
+    </div>
+</div>
+    <br>
+<div class="buttons-container">
+    <img id="myImg" width="0" height="100">
+    <img class="button-open" src="image/back.png" onclick="back()" width="200" height="50">
+</div>
+<script src = "guide.js">
+</script>
+
+</body>
+</html>
