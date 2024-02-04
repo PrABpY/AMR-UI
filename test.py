@@ -11,6 +11,18 @@ def delivery():
     print(jsonResp)
     return jsonify(jsonResp)
 
+@app.route('/ROOM1-ROOM2', methods=['OPTIONS','GET'])
+def delivery():
+    jsonResp = {'Location1': 'ROOM1', 'Location2': 'ROOM2'}
+    print(jsonResp)
+    return jsonify(jsonResp)
+
+@app.route('/ROOM1-ROOM3', methods=['OPTIONS','GET'])
+def delivery():
+    jsonResp = {'Location1': 'ROOM1', 'Location2': 'ROOM3'}
+    print(jsonResp)
+    return jsonify(jsonResp)
+
 # @app.route('/ROOM1-ROOM2', methods=['OPTIONS','GET'])
 # def delivery():
 #     @after_this_request
