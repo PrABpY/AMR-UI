@@ -6,39 +6,64 @@ app = Flask(__name__)
 
 @app.route('/delivery', methods=['OPTIONS','GET'])
 def delivery():
-    @after_this_request
-    def add_header(response):
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        return response
-
     jsonResp = {'unlock': 4098, 'lock': 4139}
     # arduino.write(b'nL')
     print(jsonResp)
     return jsonify(jsonResp)
 
-@app.route('/home', methods=['OPTIONS','GET'])
-def home():
-    @after_this_request
-    def add_header(response):
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        return response
+@app.route('/ROOM1-ROOM2', methods=['OPTIONS','GET'])
+def delivery():
+    jsonResp = {'Location1': 'ROOM1', 'Location2': 'ROOM2'}
+    print(jsonResp)
+    return jsonify(jsonResp)
 
-    text = "PeePrab"
-    # arduino.write(b'H')
-    print(text)
-    return text
+@app.route('/ROOM1-ROOM3', methods=['OPTIONS','GET'])
+def delivery():
+    jsonResp = {'Location1': 'ROOM1', 'Location2': 'ROOM3'}
+    print(jsonResp)
+    return jsonify(jsonResp)
 
-@app.route('/test', methods=['OPTIONS','GET'])
-def test():
-    @after_this_request
-    def add_header(response):
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        return response
+# @app.route('/ROOM1-ROOM2', methods=['OPTIONS','GET'])
+# def delivery():
+#     @after_this_request
+#     def add_header(response):
+#         response.headers.add('Access-Control-Allow-Origin', '*')
+#         return response
 
-    text = "test"
-    # arduino.write(b'H')
-    print(text)
-    return text
+#     jsonResp = {'unlock': 4098, 'lock': 4139}
+#     # arduino.write(b'nL')
+#     print(jsonResp)
+#     return jsonify(jsonResp)
+
+# @app.route('/home', methods=['OPTIONS','GET'])
+# def home():
+#     @after_this_request
+#     def add_header(response):
+#         response.headers.add('Access-Control-Allow-Origin', '*')
+#         return response
+
+#     text = "PeePrab"
+#     # arduino.write(b'H')
+#     print(text)
+#     return text
+
+# @app.route('/test', methods=['OPTIONS','GET'])
+# def test():
+#     @after_this_request
+#     def add_header(response):
+#         response.headers.add('Access-Control-Allow-Origin', '*')
+#         return response
+
+#     text = "test"
+#     # arduino.write(b'H')
+#     print(text)
+#     return text
+
+# @app.route('/start', methods=['POST'])
+# def start():
+#     data = request.get_json()
+#     print(data)
+#     return data
 
 if __name__ == '__main__':
     app.run(port=80,host="0.0.0.0")

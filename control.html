@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="control.css">
+    <title>ROBOT</title>
+</head>
+<body>
+<div class="header">
+    <p id="demo"></p>
+  </div>
+</div>
+<div class = "grid-container">
+    <div class="buttonscontrol-1">
+        <img class="button" onclick="forward()" src="image/f.png" width="150" height="150"></img>
+    </div>
+    <div class="buttonscontrol-2">
+        <img class="button" onclick="turn_left()" src="image/l.png" width="150" height="150"></img>
+        <img class="button" onclick="stop()" src="image/stop.png" width="150" height="150"></img>
+        <img class="button" onclick="turn_right()" src="image/r.png" width="150" height="150"></img>
+    </div>
+    <div class="buttonscontrol-1">
+        <img class="button" onclick="backward()" src="image/b.png" width="150" height="150"></img>
+    </div>
+</div>
+<div class="buttons-container">
+    <img id="myImg" width="0" height="100">
+    <img class="button-open" src="image/back.png" onclick="back()" width="150" height="40">
+</div>
+
+<script src = "control.js">
+</script>
+
+</body>
+</html>

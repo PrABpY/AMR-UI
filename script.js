@@ -1,6 +1,7 @@
 let text;
 let userpinlock = 0;
 let link = window.location.href;
+let pin = "123"
 const ip = link.split(":");
 // document.getElementById("demo").innerHTML = "http:"+ip[1]+':80/home'
 // document.getElementById("bimg").src = "image/block.png";
@@ -8,6 +9,47 @@ if (userpinlock == 0) {
     document.getElementById("myImg").src = "image/lock.png";
     document.getElementById("bimg").src = "image/block.png";
 }
+
+function to_delivery() {
+    location.href = "delivery.html";
+}
+
+function to_guide() {
+    location.href = "guide.html";
+}
+
+function to_control() {
+    location.href = "control.html"
+}
+
+function control() {
+    if (userpinlock == 1) {
+        setTimeout(to_control, 500);
+    }
+    if (userpinlock == 0) {
+        let person = prompt("Please enter your PIN:");
+        if (person == pin) {
+            userpinlock = 1
+            document.getElementById("bimg").src = "image/bunlock.png";
+            setTimeout(to_control, 500);
+        } 
+    }
+}
+
+function guide() {
+    if (userpinlock == 1) {
+        setTimeout(to_guide, 500);
+    }
+    if (userpinlock == 0) {
+        let person = prompt("Please enter your PIN:");
+        if (person == pin) {
+            userpinlock = 1
+            document.getElementById("bimg").src = "image/bunlock.png";
+            setTimeout(to_guide, 500);
+        } 
+    }
+}
+
 function delivery() {
     if (userpinlock == 1) {
         const url = "http:"+ip[1]+':80/delivery'
@@ -17,13 +59,17 @@ function delivery() {
             console.log(text);
             document.getElementById("demo").innerHTML = text
         })
-        location.href = "delivery.html";
+        setTimeout(to_delivery, 500);
+        
     }
     if (userpinlock == 0) {
         let person = prompt("Please enter your PIN:");
-        if (person == "12345") {
+        if (person == pin) {
             userpinlock = 1
             document.getElementById("bimg").src = "image/bunlock.png";
+            const url = "http:"+ip[1]+':80/delivery'
+            fetch(url)
+            setTimeout(to_delivery, 500);
         } 
     }
     
@@ -49,7 +95,7 @@ function test() {
 function button_pin() {
   if (userpinlock == 0){
       let person = prompt("Please enter your PIN:");
-      if (person == "12345") {
+      if (person == pin) {
         document.getElementById("myImg").src = "image/unlock.png";
         document.getElementById("bimg").src = "image/bunlock.png";
         userpinlock = 1;
