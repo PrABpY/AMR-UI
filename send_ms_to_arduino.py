@@ -7,7 +7,7 @@ values = 12
 string = b''
 # string += struct.pack('!B',168)
 
-arduino = serial.Serial(port='COM5', baudrate=115200)
+arduino = serial.Serial(port='COM7', baudrate=115200)
 hostname = socket.gethostname()
 IPAddr = socket.gethostbyname(hostname).split(".")
 # IPAddr.remove('192')

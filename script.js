@@ -52,7 +52,7 @@ function guide() {
 
 function delivery() {
     if (userpinlock == 1) {
-        const url = "http:"+ip[1]+':80/delivery'
+        const url = "http:"+ip[1]+':5000/delivery'
         fetch(url)
         .then(response => response.text())  
         .then(text => {
@@ -67,7 +67,7 @@ function delivery() {
         if (person == pin) {
             userpinlock = 1
             document.getElementById("bimg").src = "image/bunlock.png";
-            const url = "http:"+ip[1]+':80/delivery'
+            const url = "http:"+ip[1]+':5000/delivery'
             fetch(url)
             setTimeout(to_delivery, 500);
         } 
@@ -75,7 +75,7 @@ function delivery() {
     
 }
 function getHello_2() {
-    const url = "http:"+ip[1]+':80/hello'
+    const url = "http:"+ip[1]+':5000/hello'
     fetch(url)
     .then(response => response.json())  
     .then(json => {
@@ -86,7 +86,7 @@ function getHello_2() {
 function test() {
     let i = 0;
     while (i < 500) {
-      const url = ip+':80/test'
+      const url = ip+':5000/test'
       fetch(url)
       i++;
     }

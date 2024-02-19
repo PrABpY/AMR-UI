@@ -2,6 +2,7 @@
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 int a = 0;
+int Buzzer = 2;
 int incomingByte;
 void setup()
 {
@@ -13,19 +14,34 @@ void setup()
   // lcd.print("PrABpY"); 
   // delay(2000);
   Serial.begin(115200); 
+  pinMode(Buzzer,OUTPUT);
+  digitalWrite(Buzzer,HIGH);
+  delay(500);
+  digitalWrite(Buzzer,LOW);
+  delay(500);
+  digitalWrite(Buzzer,HIGH);
+  delay(500);
+  digitalWrite(Buzzer,LOW);
 }
 void loop() {
   if (Serial.available()) {
-    lcd.clear();
-    lcd.setCursor(0, 0); 
-    lcd.print("IP=>"); 
-    incomingByte = Serial.read();
-    lcd.setCursor(4, 0); 
-    lcd.print(incomingByte); 
-    // a += 4;
-    if (incomingByte == 88){
-      lcd.setCursor(0, 1); 
-      lcd.print("READY"); 
+    if (a == 0){
+      lcd.clear();
+      lcd.setCursor(0, 0); 
+      lcd.print("IP=>"); 
+      incomingByte = Serial.read();
+      lcd.setCursor(4, 0); 
+      lcd.print(incomingByte); 
+      if (incomingByte == 88){
+        lcd.setCursor(0, 1); 
+        lcd.print("READY"); 
+        digitalWrite(Buzzer,HIGH);
+        delay(1000);
+        digitalWrite(Buzzer,LOW);
+      }
+    }
+    else {
+
     }
   }
 }

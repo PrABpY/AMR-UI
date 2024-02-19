@@ -72,19 +72,19 @@ function clears(){
 function play(){
     // if (locations1 != "" && locations2 != ""){
         if (locations1 == "ROOM1"){
-            const url = "http:"+ip[1]+':80/ROOM1-'+locations2
+            const url = "http:"+ip[1]+':5000/ROOM1-'+locations2
             fetch(url)
         }
         if (locations1 == "ROOM2"){
-            const url = "http:"+ip[1]+':80/ROOM2-'+locations2
+            const url = "http:"+ip[1]+':5000/ROOM2-'+locations2
             fetch(url)
         }
         if (locations1 == "ROOM3"){
-            const url = "http:"+ip[1]+':80/ROOM3-'+locations2
+            const url = "http:"+ip[1]+':5000/ROOM3-'+locations2
             fetch(url)
         }
         if (locations1 == "ROOM4"){
-            const url = "http:"+ip[1]+':80/ROOM4-'+locations2
+            const url = "http:"+ip[1]+':5000/ROOM4-'+locations2
             fetch(url)
         }
     // }
