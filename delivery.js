@@ -8,6 +8,10 @@ function back() {
     location.href = "main.html";
 }
 
+function to_suc() {
+    location.href = "suc.html";
+}
+
 function room1() {
     if (checkbut == 0) {
         document.getElementById("location1").innerHTML = ". ROOM 1 ."
@@ -72,20 +76,32 @@ function clears(){
 function play(){
     // if (locations1 != "" && locations2 != ""){
         if (locations1 == "ROOM1"){
-            const url = "http:"+'172.25.106.94'+':5000/ROOM1-'+locations2
-            fetch(url)
+            if (confirm("Confirm ROOM1 to "+locations2)) {
+                const url = "http:"+'172.25.106.94'+':5000/ROOM1-'+locations2
+                fetch(url)
+                setTimeout(to_suc, 500);
+            }
         }
         if (locations1 == "ROOM2"){
-            const url = "http:"+'172.25.106.94'+':5000/ROOM2-'+locations2
-            fetch(url)
+            if (confirm("Confirm ROOM1 to "+locations2)) {
+                const url = "http:"+'172.25.106.94'+':5000/ROOM1-'+locations2
+                fetch(url)
+                setTimeout(to_suc, 500);
+            }
         }
         if (locations1 == "ROOM3"){
-            const url = "http:"+'172.25.106.94'+':5000/ROOM3-'+locations2
-            fetch(url)
+            if (confirm("Confirm ROOM1 to "+locations2)) {
+                const url = "http:"+'172.25.106.94'+':5000/ROOM1-'+locations2
+                fetch(url)
+                setTimeout(to_suc, 500);
+            }
         }
         if (locations1 == "ROOM4"){
-            const url = "http:"+'172.25.106.94'+':5000/ROOM4-'+locations2
-            fetch(url)
+            if (confirm("Confirm ROOM1 to "+locations2)) {
+                const url = "http:"+'172.25.106.94'+':5000/ROOM1-'+locations2
+                fetch(url)
+                setTimeout(to_suc, 500);
+            }
         }
     // }
 }
